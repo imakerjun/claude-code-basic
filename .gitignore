@@ -3,3 +3,4 @@ node_modules
 .DS_Store
 *.log
 site/public/_pagefind
+_scratch/
