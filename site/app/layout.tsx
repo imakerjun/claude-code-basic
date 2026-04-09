@@ -6,8 +6,8 @@ import './global.css'
 import type { ReactNode } from 'react'
 
 export const metadata = {
-  title: 'vibe-to-ship',
-  description: '바이브코딩에서 배포까지 — AI 풀사이클 워크숍'
+  title: 'Claude Code Basic',
+  description: '90분 Claude Code 입문 워크숍 — 임원진 대상'
 }
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
@@ -16,15 +16,15 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       logo={
         <span className="brand-lockup">
           <span className="brand-mark" aria-hidden="true">
-            V
+            C
           </span>
           <span className="brand-text">
-            <strong>vibe-to-ship</strong>
-            <small>AI Full-Cycle Workshop</small>
+            <strong>Claude Code Basic</strong>
+            <small>90분 임원진 입문 워크숍</small>
           </span>
         </span>
       }
-      projectLink="https://github.com/imakerjun/vibe-to-ship"
+      projectLink="https://github.com/imakerjun/claude-code-basic"
     >
       <ThemeSwitch lite className="navbar-theme-switch" />
     </Navbar>
@@ -32,8 +32,8 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const footer = (
     <Footer className="site-footer">
       <div className="footer-copy">
-        <strong>vibe-to-ship</strong>
-        <span>바이브코딩에서 배포까지, 풀사이클 실습 가이드</span>
+        <strong>Claude Code Basic</strong>
+        <span>임원진 대상 90분 Claude Code 입문 워크숍</span>
       </div>
     </Footer>
   )
@@ -47,7 +47,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           navbar={navbar}
           footer={footer}
           pageMap={pageMap}
-          docsRepositoryBase="https://github.com/imakerjun/vibe-to-ship/tree/main"
+          docsRepositoryBase="https://github.com/imakerjun/claude-code-basic/tree/main"
           feedback={{ content: null }}
           editLink=""
           search={<Search placeholder="문서 검색" />}
