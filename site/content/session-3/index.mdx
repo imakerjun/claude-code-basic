@@ -6,16 +6,26 @@
 > - LangChain, [The Anatomy of an Agent Harness](https://blog.langchain.com/the-anatomy-of-an-agent-harness/) — 하네스 = 모델 외의 모든 구성요소 (도구·컨텍스트·가드레일·피드백·관측)
 > - Martin Fowler / Birgitta Böckeler, [Harness Engineering](https://martinfowler.com/articles/exploring-gen-ai/harness-engineering.html) — **Guides(피드포워드)** 와 **Sensors(피드백)** 설계 실천
 
-## 하네스의 네 가지 재료
+## 이 세션이 다루는 범위 — 솔직한 경계선
 
-| 재료 | 역할 | 비유 |
+진짜 하네스 엔지니어링은 tool permissions, hooks, sub-agents, feedback loops, observability, evaluation까지 포괄하는 설계 실천입니다. 90분 입문 세션에서 전부 다룰 수는 없습니다.
+
+오늘 이 세션에서 **실제로 해보는 것**은 이것 한 가지입니다.
+
+> **CLAUDE.md에 의도된 규칙 몇 줄을 적어 agentic 루프의 출력을 바꿔본다.**
+
+이것은 Böckeler가 말한 **Guides(피드포워드 통제)** 설계의 *가장 작은 단위*입니다. 파일이 `claude init`으로 자동 생성된다는 사실과는 별개입니다 — 핵심은 **그 파일에 무엇을 어떤 의도로 적느냐**입니다. 빈 템플릿과 의도가 담긴 규칙은 다른 층위의 실천입니다.
+
+Skills·Agents·Hooks는 **개념과 실제 사례**로만 소개합니다. 이 90분의 목표는 "네 가지 재료 전부를 설계한다"가 아니라, **하네스라는 설계 층위가 존재한다는 것을 한 번이라도 직접 손으로 느껴본다**입니다.
+
+## 하네스의 네 가지 재료 (전체 지도)
+
+| 재료 | 역할 | 오늘 다루는 방식 |
 |---|---|---|
-| **CLAUDE.md** | 항상 적용되는 조직 규칙 | 사내 가이드 문서 |
-| **Skills** | 반복되는 절차에 이름 붙이기 | 표준 운영 절차(SOP) |
-| **Agents** | 역할 기반 위임 | 팀 내 전문 담당자 |
-| **Hooks** | 정책의 자동 집행 | 게이트 키퍼 |
-
-오늘 세션에서는 **CLAUDE.md와 Skills** 두 가지를 중심으로 다룹니다. Agents와 Hooks는 개념만 소개합니다.
+| **CLAUDE.md** | 항상 적용되는 Guides (피드포워드) | ✅ 라이브 데모 + 직접 수정 |
+| **Skills** | 반복되는 절차에 이름 붙이기 | 개념 + 실제 사례 |
+| **Agents** | 역할 기반 위임 | 개념만 |
+| **Hooks** | 강제력 있는 정책 집행 | 개념만 |
 
 ## 흐름
 
