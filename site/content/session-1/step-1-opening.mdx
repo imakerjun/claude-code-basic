@@ -1,22 +1,31 @@
-# 1. 오프닝과 3-tier 프레임
+# 1. 오프닝과 2-모드 프레임
 
-## 3-tier 프레임
+## 2분 녹화 데모 재생 — 바이브 코딩 예시
 
-Claude Code를 쓰는 방식은 세 층위로 나뉩니다.
+의존성 없는 단일 HTML 파일을 자연어 한 번으로 생성하고, 다시 자연어 한 번으로 수정하는 영상을 재생합니다. 이 구간이 **Vibe coding**의 전형입니다 — 한 방 프롬프트, 일회성, 환경 설계 없음.
 
-### T1 · Vibe coding — 즉흥적 한 방 프롬프트
+## 2-모드 프레임
+
+Claude Code를 설명하는 두 층위입니다.
+
+### 1. Vibe coding — 즉흥 한 방 모드
 
 - 방식: "이거 만들어줘" 한 번
 - 특징: 빠르고 직관적, 일회성
-- 위치: 체험용 진입점
+- 체험은 강렬하지만 조직이 손댈 레버가 거의 없다
+- 위치: 방금 본 2분 데모가 유일한 예시
 
-### T2 · Agentic coding — 자율 실행 루프
+### 2. Agentic coding + Harness engineering — 설계 가능한 층위
+
+두 용어는 대립이 아니라 **층위 관계**입니다. 에이전틱은 모델의 *행위 양식(루프)*, 하네스는 *그 루프가 돌아가는 환경·규칙의 설계*입니다.
+
+#### Agentic coding
 
 - 정의: **모델이 파일을 읽고, 명령을 실행하고, 코드를 고치며 문제를 자율적으로 해결해 나가는 작업 방식**. 질문-답변 한 왕복이 아니라, 계획·실행·검증을 스스로 반복하는 루프.
 - 출처: Anthropic, [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices) — *"Claude Code is an agentic coding environment. Unlike a chatbot that answers questions and waits, Claude Code can read your files, run commands, make changes, and autonomously work through problems…"*
 - 초점: **무엇을 하는가 (행위 양식)**
 
-### T3 · Harness engineering — 루프가 도는 환경의 설계
+#### Harness engineering
 
 - 정의: 에이전트를 구성하는 "모델을 뺀 나머지 전부"를 설계하는 실천. 도구·권한·컨텍스트·가드레일·피드백 루프·관측을 엮어 에이전트의 출력 품질을 규율한다. **Agent = Model + Harness**.
 - 출처:
@@ -24,12 +33,12 @@ Claude Code를 쓰는 방식은 세 층위로 나뉩니다.
   - Martin Fowler / Birgitta Böckeler, [Harness Engineering](https://martinfowler.com/articles/exploring-gen-ai/harness-engineering.html) — 코딩 에이전트 사용자 관점에서 **Guides(피드포워드 통제)** 와 **Sensors(피드백 통제)** 를 설계하는 규율로 정식화.
 - 초점: **어디서·어떤 규칙으로 하는가 (환경·정책)**
 
-> **한 줄 구분**: Agentic coding은 "모델의 행위 양식(루프)"이고, Harness engineering은 "그 루프가 돌아가는 환경과 규칙의 설계"입니다. Anthropic의 Best Practices 문서도 이 구조를 그대로 따릅니다 — agentic coding 환경을 정의한 뒤, CLAUDE.md·permissions·hooks·subagents·skills 같은 하네스 구성요소를 설정하라고 안내합니다.
+> **한 줄 구분**: Agentic coding은 "모델의 행위 양식(루프)", Harness engineering은 "그 루프가 돌아가는 환경과 규칙의 설계". Anthropic의 Best Practices 문서도 이 구조를 그대로 따릅니다 — agentic coding 환경을 정의한 뒤, CLAUDE.md·permissions·hooks·subagents·skills 같은 하네스 구성요소를 설정하라고 안내합니다.
 
 ## 오늘의 이동 경로
 
-| 섹션 | Tier | 확인할 것 |
+| 세션 | 어떤 모드 | 확인할 것 |
 |---|---|---|
-| 세션 1 | T1 체험 | 대화형 AI와의 유사점 |
-| 세션 2 | T2 이해 | 에이전틱 루프의 차이 |
-| 세션 3 | T3 하네스 | 네 가지 재료 설계 |
+| 세션 1 | Vibe 대비 → Agentic 입문 | 한 방 vs 자율 루프의 첫 차이 |
+| 세션 2 | Agentic 심화 | 다문서 교차·계획·쓰기까지 확장되는 루프 |
+| 세션 3 | Harness 설계 | CLAUDE.md·Skills·Agents·Hooks로 루프의 환경을 고정 |
