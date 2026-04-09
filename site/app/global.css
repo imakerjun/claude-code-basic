@@ -1,0 +1,427 @@
+/* ============================================================
+ * Notion-like design tokens
+ * Body color #37352F (Notion), soft tinted callouts (no border),
+ * subtle table borders, body-colored links with low-opacity underline.
+ * ============================================================ */
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard",
+    "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Helvetica, Arial,
+    sans-serif;
+
+  --text-body: rgb(55, 53, 47);
+  --text-heading: rgb(55, 53, 47);
+  --text-muted: rgba(55, 53, 47, 0.65);
+  --border-subtle: rgba(55, 53, 47, 0.13);
+  --row-hover: rgba(55, 53, 47, 0.03);
+
+  --callout-gray-bg: rgb(241, 241, 239);
+  --callout-blue-bg: rgb(231, 243, 248);
+  --callout-green-bg: rgb(237, 243, 236);
+  --callout-yellow-bg: rgb(251, 243, 219);
+  --callout-red-bg: rgb(253, 235, 236);
+}
+
+.dark {
+  --text-body: rgba(255, 255, 255, 0.81);
+  --text-heading: rgba(255, 255, 255, 0.92);
+  --text-muted: rgba(255, 255, 255, 0.55);
+  --border-subtle: rgba(255, 255, 255, 0.13);
+  --row-hover: rgba(255, 255, 255, 0.05);
+
+  --callout-gray-bg: rgba(255, 255, 255, 0.055);
+  --callout-blue-bg: rgba(133, 192, 249, 0.12);
+  --callout-green-bg: rgba(119, 219, 150, 0.12);
+  --callout-yellow-bg: rgba(250, 222, 117, 0.12);
+  --callout-red-bg: rgba(255, 115, 105, 0.13);
+}
+
+/* ============================================================
+ * Brand / Footer / Step badge (legacy, kept)
+ * ============================================================ */
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.brand-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.375rem;
+  background: #6366f1;
+  color: white;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.brand-text strong {
+  font-size: 0.9375rem;
+}
+.brand-text small {
+  font-size: 0.6875rem;
+  opacity: 0.6;
+}
+
+.site-footer .footer-copy {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+.site-footer .footer-copy span {
+  opacity: 0.6;
+}
+
+.step-tools {
+  display: inline-block;
+  padding: 0.125rem 0.625rem;
+  border-radius: 9999px;
+  background: var(--callout-gray-bg);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.workshop-narrative {
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  margin-top: 2rem;
+}
+.workshop-narrative blockquote {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+}
+.workshop-prep {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-subtle);
+}
+
+/* ============================================================
+ * Typography — Notion-like soft body color, lighter heading weights
+ * ============================================================ */
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+article,
+.nextra-content {
+  color: var(--text-body);
+}
+
+article h1,
+article h2,
+article h3,
+article h4,
+.nextra-content h1,
+.nextra-content h2,
+.nextra-content h3,
+.nextra-content h4 {
+  color: var(--text-heading);
+  letter-spacing: -0.01em;
+}
+
+article h1,
+.nextra-content h1 {
+  font-weight: 700;
+  margin-top: 1.5rem;
+}
+article h2,
+.nextra-content h2 {
+  font-weight: 600;
+  margin-top: 2.75rem;
+  padding-top: 0.25rem;
+  border-bottom: none;
+}
+article h3,
+.nextra-content h3 {
+  font-weight: 600;
+  margin-top: 2rem;
+}
+article h2 + p,
+article h3 + p,
+.nextra-content h2 + p,
+.nextra-content h3 + p {
+  margin-top: 0.875rem;
+}
+
+/* === 한글 본문 가독성 === */
+article p,
+article li,
+article blockquote,
+.nextra-content p,
+.nextra-content li,
+.nextra-content blockquote {
+  line-height: 1.65;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* Inline code — Notion signature red on soft gray */
+article :not(pre) > code,
+.nextra-content :not(pre) > code {
+  color: #eb5757;
+  background: rgba(135, 131, 120, 0.15);
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+.dark article :not(pre) > code,
+.dark .nextra-content :not(pre) > code {
+  color: #ff6b6b;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Image caption — italic text right after image becomes caption */
+article p > img + em,
+article img + em,
+.nextra-content img + em {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-style: normal;
+  text-align: center;
+}
+
+/* Notion Toggle block */
+details.notion-toggle {
+  margin: 1rem 0;
+  padding: 0;
+  border: none;
+}
+details.notion-toggle > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  font-weight: 500;
+  color: var(--text-body);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  user-select: none;
+}
+details.notion-toggle > summary::-webkit-details-marker {
+  display: none;
+}
+details.notion-toggle > summary::before {
+  content: "▶";
+  font-size: 0.7em;
+  color: var(--text-muted);
+  transition: transform 0.15s ease;
+  display: inline-block;
+  width: 0.9em;
+}
+details.notion-toggle[open] > summary::before {
+  transform: rotate(90deg);
+}
+details.notion-toggle > .notion-toggle-body {
+  margin-top: 0.5rem;
+  padding-left: 1.4rem;
+  border-left: 1px solid var(--border-subtle);
+  margin-left: 0.35em;
+}
+
+/* Notion Columns */
+.notion-columns {
+  display: grid;
+  gap: 1.5rem;
+  margin: 1.25rem 0;
+}
+.notion-columns.cols-2 { grid-template-columns: 1fr 1fr; }
+.notion-columns.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.notion-columns > * { min-width: 0; }
+.notion-columns > * > :first-child { margin-top: 0; }
+@media (max-width: 768px) {
+  .notion-columns.cols-2,
+  .notion-columns.cols-3 { grid-template-columns: 1fr; }
+}
+article p,
+article blockquote,
+.nextra-content p,
+.nextra-content blockquote {
+  max-width: 70ch;
+}
+
+article ul li,
+article ol li,
+.nextra-content ul li,
+.nextra-content ol li {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+/* 코드 블록 내 한글 줄바꿈 + 줄 간격 + 빈 줄 보존 */
+article pre code,
+.nextra-content pre code {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  line-height: 1.75;
+}
+
+/* Nextra의 Shiki는 각 코드 줄을 클래스 없는 <span><span>…</span></span>
+ * 구조로 렌더링합니다. 빈 줄(<span><span></span></span>)이 높이 0으로
+ * 접혀 단락 구분이 사라지는 문제를 방지하기 위해 직접 자식 span을
+ * block 화하고, 내부가 빈 경우 NBSP를 넣어 한 줄 높이를 보장합니다. */
+article pre code > span,
+.nextra-content pre code > span {
+  display: block;
+  min-height: 1.6em;
+}
+article pre code > span:empty::before,
+article pre code > span > span:empty::before,
+.nextra-content pre code > span:empty::before,
+.nextra-content pre code > span > span:empty::before {
+  content: "\00a0";
+}
+
+/* ============================================================
+ * Links — body-colored with low-opacity underline (Notion)
+ * ============================================================ */
+article a,
+.nextra-content a {
+  color: var(--text-body);
+  text-decoration: underline;
+  text-decoration-color: var(--border-subtle);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.15s ease;
+}
+article a:hover,
+.nextra-content a:hover {
+  text-decoration-color: currentColor;
+}
+
+/* ============================================================
+ * Tables — subtle borders, medium-weight header, hover row
+ * ============================================================ */
+article table,
+.nextra-content table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.95em;
+}
+article table th,
+article table td,
+.nextra-content table th,
+.nextra-content table td {
+  border: 1px solid var(--border-subtle);
+  padding: 0.625rem 0.75rem;
+  line-height: 1.6;
+  word-break: keep-all;
+  text-align: left;
+  vertical-align: top;
+}
+article table th,
+.nextra-content table th {
+  font-weight: 500;
+  background: var(--callout-gray-bg);
+  color: var(--text-heading);
+}
+article table tbody tr:hover,
+.nextra-content table tbody tr:hover {
+  background: var(--row-hover);
+}
+
+/* ============================================================
+ * Blockquote — thin left bar only, no background
+ * ============================================================ */
+article blockquote,
+.nextra-content blockquote {
+  border-left: 3px solid var(--border-subtle);
+  padding-left: 0.875rem;
+  margin-left: 0;
+  font-style: normal;
+  color: var(--text-body);
+}
+
+/* ============================================================
+ * Callout (Nextra) — Notion style: tinted bg, no border,
+ * 6px radius, soft text color, subtle icon.
+ * Nextra renders Callout as a div with role/data attributes.
+ * We target both the wrapper and known type variants.
+ * ============================================================ */
+.nextra-callout,
+div[class*="nextra-callout"],
+article .nextra-callout {
+  border: none !important;
+  border-left: none !important;
+  border-radius: 3px !important;
+  padding: 14px 16px 14px 14px !important;
+  margin: 1rem 0 !important;
+  background: var(--callout-gray-bg) !important;
+  color: var(--text-body) !important;
+  box-shadow: none !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+}
+
+/* Notion-style emoji: 1.25em 글리프, 본문 첫 줄과 baseline 정렬 */
+.nextra-callout > :first-child,
+div[class*="nextra-callout"] > :first-child {
+  flex: 0 0 auto !important;
+  font-size: 1.125rem !important;
+  line-height: 1.75 !important;
+  width: 1.375rem !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: center !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+}
+
+/* Callout 본문 영역 — 첫 자식 margin-top 제거해 emoji와 정렬 */
+.nextra-callout > :nth-child(2) > :first-child,
+div[class*="nextra-callout"] > :nth-child(2) > :first-child {
+  margin-top: 0 !important;
+}
+
+/* Type variants — Nextra applies type via class names containing the color */
+.nextra-callout[data-type="info"],
+div[class*="nextra-callout"][class*="blue"],
+div[class*="nextra-callout"][class*="info"] {
+  background: var(--callout-blue-bg) !important;
+}
+.nextra-callout[data-type="warning"],
+div[class*="nextra-callout"][class*="yellow"],
+div[class*="nextra-callout"][class*="warning"] {
+  background: var(--callout-yellow-bg) !important;
+}
+.nextra-callout[data-type="error"],
+div[class*="nextra-callout"][class*="red"],
+div[class*="nextra-callout"][class*="error"] {
+  background: var(--callout-red-bg) !important;
+}
+.nextra-callout[data-type="default"],
+div[class*="nextra-callout"][class*="gray"],
+div[class*="nextra-callout"][class*="default"] {
+  background: var(--callout-gray-bg) !important;
+}
+
+/* Callout 내부 텍스트도 본문 색상으로 정돈 */
+.nextra-callout p,
+.nextra-callout li,
+.nextra-callout strong,
+div[class*="nextra-callout"] p,
+div[class*="nextra-callout"] li,
+div[class*="nextra-callout"] strong {
+  color: var(--text-body) !important;
+}
+
+/* Callout 안의 링크는 underline 유지하되 색은 본문색 */
+.nextra-callout a,
+div[class*="nextra-callout"] a {
+  color: var(--text-body) !important;
+}
