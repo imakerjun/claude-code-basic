@@ -10,17 +10,21 @@ Claude Code를 쓰는 방식은 세 층위로 나뉩니다.
 - 특징: 빠르고 직관적, 일회성
 - 위치: 체험용 진입점
 
-### T2 · Agentic coding — 계획·실행·검증 루프
+### T2 · Agentic coding — 자율 실행 루프
 
-- 방식: Claude가 작업을 쪼개고, 순서를 정하고, 파일을 읽고 쓰고, 스스로 검증
-- 특징: 여러 단계 자동화, 도구 사용
-- 위치: 이해해야 할 단계
+- 정의: **모델이 파일을 읽고, 명령을 실행하고, 코드를 고치며 문제를 자율적으로 해결해 나가는 작업 방식**. 질문-답변 한 왕복이 아니라, 계획·실행·검증을 스스로 반복하는 루프.
+- 출처: Anthropic, [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices) — *"Claude Code is an agentic coding environment. Unlike a chatbot that answers questions and waits, Claude Code can read your files, run commands, make changes, and autonomously work through problems…"*
+- 초점: **무엇을 하는가 (행위 양식)**
 
-### T3 · Harness engineering — AI 동작 기준의 설계
+### T3 · Harness engineering — 루프가 도는 환경의 설계
 
-- 방식: CLAUDE.md, Skills, Agents, Hooks로 AI 동작 기준을 설계
-- 특징: 한 번 설계하면 이후의 모든 상호작용에 적용
-- 위치: 오늘 다루는 층위
+- 정의: 에이전트를 구성하는 "모델을 뺀 나머지 전부"를 설계하는 실천. 도구·권한·컨텍스트·가드레일·피드백 루프·관측을 엮어 에이전트의 출력 품질을 규율한다. **Agent = Model + Harness**.
+- 출처:
+  - LangChain, [The Anatomy of an Agent Harness](https://blog.langchain.com/the-anatomy-of-an-agent-harness/) — 하네스를 모델 외의 모든 구성요소(도구, 컨텍스트 관리, 가드레일, 피드백 루프, 관측)로 정의.
+  - Martin Fowler / Birgitta Böckeler, [Harness Engineering](https://martinfowler.com/articles/exploring-gen-ai/harness-engineering.html) — 코딩 에이전트 사용자 관점에서 **Guides(피드포워드 통제)** 와 **Sensors(피드백 통제)** 를 설계하는 규율로 정식화.
+- 초점: **어디서·어떤 규칙으로 하는가 (환경·정책)**
+
+> **한 줄 구분**: Agentic coding은 "모델의 행위 양식(루프)"이고, Harness engineering은 "그 루프가 돌아가는 환경과 규칙의 설계"입니다. Anthropic의 Best Practices 문서도 이 구조를 그대로 따릅니다 — agentic coding 환경을 정의한 뒤, CLAUDE.md·permissions·hooks·subagents·skills 같은 하네스 구성요소를 설정하라고 안내합니다.
 
 ## 오늘의 이동 경로
 

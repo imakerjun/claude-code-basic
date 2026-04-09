@@ -9,11 +9,12 @@
 - [Hooks](https://code.claude.com/docs/en/hooks)
 - [Anthropic 소개](https://www.anthropic.com/)
 
-## 개념 참고
+## 개념 참고 (출처 기반)
 
-- **Vibe coding**: Andrej Karpathy가 2025년 초 처음 사용한 용어. 자연어 프롬프트로 앱을 만드는 접근.
-- **Agentic coding**: AI가 계획·실행·검증 루프를 스스로 돌며 작업하는 방식.
-- **Harness engineering**: 이 교육에서 제안하는 확장 개념. 조직 단위에서 AI 사용 방식을 설계하는 레이어.
+- **Vibe coding** — Andrej Karpathy가 2025년 초 처음 사용한 용어. 자연어 프롬프트로 앱을 만드는 접근.
+- **Agentic coding** — Anthropic, [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices): 모델이 파일을 읽고, 명령을 실행하고, 코드를 수정하며 **자율적으로 문제를 풀어가는 실행 루프**. 질문-답변 한 왕복의 챗봇과 구분되는 **행위 양식**.
+- **Harness engineering** — LangChain, [The Anatomy of an Agent Harness](https://blog.langchain.com/the-anatomy-of-an-agent-harness/): **Agent = Model + Harness**. 하네스는 모델 외 전부(도구·컨텍스트 관리·가드레일·피드백 루프·관측)를 가리킴. Martin Fowler, [Harness Engineering](https://martinfowler.com/articles/exploring-gen-ai/harness-engineering.html): 코딩 에이전트 사용자 관점에서 **Guides(피드포워드 통제)** 와 **Sensors(피드백 통제)** 를 설계하는 규율.
+- **두 개념의 구분**: Agentic coding은 *모델이 어떻게 움직이는가(루프)*, Harness engineering은 *그 루프가 어떤 환경·규칙 안에서 돌아가는가(환경)*. Claude Code Best Practices 문서 자체가 이 구조를 따른다 — agentic coding 환경을 정의한 뒤 CLAUDE.md, permissions, hooks, subagents, skills 같은 하네스 구성요소 설정을 안내.
 
 ## 참고 저장소
 

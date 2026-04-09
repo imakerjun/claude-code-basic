@@ -7,13 +7,18 @@
 | Tier | 이름 | 누가 | 무엇을 | 한 줄 설명 |
 |---|---|---|---|---|
 | **T1** | Vibe coding | 누구나 | "이거 만들어줘" 한 번 | 즉흥적 한 방 프롬프트 |
-| **T2** | Agentic coding | 실무자 | Claude가 계획·실행·검증 | 자기 수정 루프 |
-| **T3** | **Harness engineering** | **팀으로 AI를 쓰려는 사람** | CLAUDE.md·Skills·Agents·Hooks | 팀이 AI와 일하는 방식의 설계 |
+| **T2** | Agentic coding | 실무자 | 모델이 파일·명령·수정을 자율 실행 | 행위 양식(루프) |
+| **T3** | **Harness engineering** | **팀으로 AI를 쓰려는 사람** | CLAUDE.md·Skills·Agents·Hooks | 루프가 도는 환경·규칙 설계 |
 
 ## 경계선
 
-- **T1 → T2 경계**: "계획을 스스로 세우는가"
-- **T2 → T3 경계**: "팀 단위로 기준이 적용되는가"
+- **T1 → T2 경계**: "모델이 스스로 계획·실행·검증을 반복하는가"
+- **T2 → T3 경계**: "그 루프가 도는 환경·도구·규칙을 사람이 설계하는가"
+
+## 출처 기반 정의
+
+- **Agentic coding** — Anthropic, [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices): *"Claude Code is an agentic coding environment… can read your files, run commands, make changes, and autonomously work through problems."* → 모델의 **행위 양식**.
+- **Harness engineering** — LangChain, [The Anatomy of an Agent Harness](https://blog.langchain.com/the-anatomy-of-an-agent-harness/): **Agent = Model + Harness** (모델 외 전부: 도구·컨텍스트·가드레일·피드백·관측). Martin Fowler, [Harness Engineering](https://martinfowler.com/articles/exploring-gen-ai/harness-engineering.html): **Guides(피드포워드)** 와 **Sensors(피드백)** 설계 실천. → 루프가 도는 **환경·규칙**.
 
 ## T3를 설계할 시점인가
 
