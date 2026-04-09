@@ -7,7 +7,7 @@ import type { ReactNode } from 'react'
 
 export const metadata = {
   title: 'Claude Code Basic',
-  description: '90분 Claude Code 입문 워크숍 — 임원진 대상'
+  description: 'Claude Code 입문 워크숍'
 }
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
@@ -20,7 +20,6 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           </span>
           <span className="brand-text">
             <strong>Claude Code Basic</strong>
-            <small>90분 임원진 입문 워크숍</small>
           </span>
         </span>
       }
@@ -33,7 +32,6 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     <Footer className="site-footer">
       <div className="footer-copy">
         <strong>Claude Code Basic</strong>
-        <span>임원진 대상 90분 Claude Code 입문 워크숍</span>
       </div>
     </Footer>
   )
